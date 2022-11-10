@@ -16,12 +16,12 @@ const renderPage = (viewModel: ViewModel) => '' as HtmlFragment
 
 const renderErrorMessage = (errorMessage: ErrorMessage) => '' as HtmlFragment
 
-const buildViewModel = (params: Params) => ({})
+const buildViewModelThatHasNonStaticData = (queries: Queries) => (params: Params) => ({})
 
-export const home: Page = () => (input) => pipe(
+export const search: Page = (queries) => (input) => pipe(
 	input,
 	validateParams(paramCodec),
-	E.map(buildViewModel),
+	E.map(buildViewModelThatHasNonStaticData(queries)),
 	E.bimap(
 		renderErrorMessage,
 		renderPage
