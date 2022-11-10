@@ -1,8 +1,8 @@
 import { pipe } from 'fp-ts/lib/function';
-import { ErrorMessage, HtmlFragment, Page } from '../../types';
 import * as E from 'fp-ts/Either';
 import * as t from 'io-ts';
 import { validateParams } from './validate-params.helper';
+import { HtmlFragment, ErrorMessage, Page } from '../../types/sciety';
 
 const paramCodec = t.type({})
 
