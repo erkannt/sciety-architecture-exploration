@@ -21,5 +21,5 @@ export type PageRepresentation = {
 }
 
 export type App = {
-	pages: Array<PageRepresentation>
+	pages: ReadonlyArray<PageRepresentation>
 }
