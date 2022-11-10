@@ -28,6 +28,9 @@ type Queries = Record<string, InternalQuery | ThirdPartyQuery>
 // Commands
 type Command = Record<string, any>
 
-export type CommandValidator = <A>(input: unknown) => E.Either<ErrorMessage, Command>
+export type CommandValidator = <A>(input: unknown) => E.Either<ErrorMessage, A>
 
-export type CommandHandler = (actor: Actor) => (command: Command) => E.Either<ErrorMessage, Command>
+export type CommandHandler = (actor: Actor) => (command: Command) => E.Either<ErrorMessage, 'events-created' | 'no-op'>
+
+// Sagas
+export type Saga = (queries: Queries) => Command

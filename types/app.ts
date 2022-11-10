@@ -1,4 +1,4 @@
-import { CommandHandler, CommandValidator, Page } from './sciety';
+import { CommandHandler, CommandValidator, Page, Saga } from './sciety';
 
 type RouterPath = string
 
@@ -22,4 +22,5 @@ export type RouteToCommand = {
 export type App = {
 	userFacingViews: ReadonlyArray<RouteToPage>
 	userFacingCommands: ReadonlyArray<RouteToCommand>
+	sagas: ReadonlyArray<Saga>
 }
