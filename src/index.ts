@@ -7,5 +7,6 @@ const pageRoutes = [
 ]
 
 const app: App = ({
-	userFacingViews: pageRoutes
+	userFacingViews: pageRoutes,
+	userFacingCommands: []
 })
