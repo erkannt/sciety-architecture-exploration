@@ -14,12 +14,12 @@ type Queries = Record<string, InternalQuery | ThirdPartyQuery>
 
 export type Page = (queries: Queries) => (input: unknown) => PageResult
 
-export type PageRepresentation = {
+export type RoutesToPages = {
 	path: RouterPath
 	page: Page
 	doNotUseDefaultLayout?: boolean
 }
 
 export type App = {
-	pages: ReadonlyArray<PageRepresentation>
+	userFacingViews: ReadonlyArray<RoutesToPages>
 }
